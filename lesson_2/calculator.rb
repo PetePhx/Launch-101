@@ -19,7 +19,6 @@ def operation_to_message(op)
   end
 end
 
-
 prompt("Welcome to Calculator! Enter your name:")
 
 name = ''

@@ -1,0 +1,110 @@
+
+1. a method that returns the sum of two integers
+-------
+casual:
+-------
+Given two integers.
+
+Add the two numbers
+Assign the sum to a new variable result
+
+return the result
+
+------
+formal:
+------
+
+START
+
+# given two integers called num_1 and num_2
+
+SET result = num_1 + num_2
+
+RETURN result
+
+END
+
+==============================================================
+
+2. a method that takes an array of strings, and returns
+a string that is all those strings concatenated together
+
+-------
+casual:
+-------
+
+Given an array of strings.
+
+Set the new variable result to empty string ''.
+
+Iterate  through the input array one by one:
+  - for each element concatenate the element to the result
+
+Return the result
+
+------
+formal:
+------
+
+START
+
+# Given an array of strings names str_array
+
+SET result_str = ''
+
+SET iterator = 0
+
+WHILE iterator < length of str_array
+  SET temporary_string = str_array element at position iterator
+  SET result_str = concatenate ( result_str , temporary_string )
+
+  iterator = iterator + 1
+
+RETURN result_str
+
+END
+
+
+
+==============================================================
+
+3. a method that takes an array of integers, and returns
+a new array with every other element
+
+
+-------
+casual:
+-------
+
+# given an array of integers
+
+define a new empty array for results
+iterate through every element of the input array
+  -if the index is even (zero offset):
+    add the element to the results array
+  - else do nothing
+
+return the results array.
+
+------
+formal:
+------
+
+START
+
+# Given input array of integers, called int_array
+
+SET iterator = 0
+
+SET results_arr = []
+
+WHILE iterator < length of int_array
+  IF iterator is even
+    SET current_int to value at int_array position iterator
+    PUSH current_int to the end of results_arr
+  ELSE
+    Do nothing
+
+RETURN results_arr
+
+END

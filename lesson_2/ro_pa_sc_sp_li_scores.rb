@@ -32,7 +32,7 @@ def update_results(player, computer, scores)
   if win?(player, computer)
     scores[0] += 1
   elsif win?(computer, player)
-    scores[1] +=1
+    scores[1] += 1
   end
 end
 
@@ -52,7 +52,6 @@ def display_final(scores)
     prompt("Beep Beep Boop... something went wrong! bye!")
   end
 end
-
 
 loop do
   # [player_score, computer_score]. Mutable structure used for easier updates.

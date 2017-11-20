@@ -14,8 +14,9 @@
 :op_err: Doit choisir 1, 2, 3 ou 4.
 :op_status: " Les deux nombres ..."
 :result_is: 'Le résultat est: '
-:further_calc: 'Voulez-vous effectuer un autre calcul? (Y pour calculer à nouveau) '
-:kthnxbye: Merci d'avoir utilisé la calculatrice. Au revoir!
+:further_calc: 'Voulez-vous effectuer un autre calcul?                    (Y pour
+  calculer à nouveau) '
+:kthnxbye: Merci d'avoir utilisé la calculatrice.                    Au revoir!
 :op_verbs:
 - Ajout
 - Soustraire

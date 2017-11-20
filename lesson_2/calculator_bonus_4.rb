@@ -4,25 +4,21 @@ def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
-# this method should work with integers, decimal floats,
-# as well as the scientific notation 1.6E-19
-def number? num
+def number?(num)
   num =~ /\A-?\d*.?\d+(e-?\d+)?\z/i
 end
-# It still rejects decimal point without any following digits e.g. "1.""
 
 def operation_to_message(op)
-
-  op_str = case op
-  when '1'
-    'Adding'
-  when '2'
-    'Subtracting'
-  when '3'
-    'Multiplying'
-  when '4'
-    'Dividing'
-  end
+  op_str =  case op
+            when '1'
+              'Adding'
+            when '2'
+              'Subtracting'
+            when '3'
+              'Multiplying'
+            when '4'
+              'Dividing'
+            end
   op_str
 end
 
@@ -48,7 +44,7 @@ loop do
   end
 end
 
-prompt calc_mesg[:hi]+"#{name}!"
+prompt calc_mesg[:hi] + "#{name}!"
 
 loop do # main loop
   number1 = ''
@@ -87,9 +83,8 @@ loop do # main loop
       prompt calc_mesg[:op_err]
     end
   end
-  puts calc_mesg[:op_status]
-  puts operation_to_message(operator)
-  prompt("#{operation_to_message(operator)}" + calc_mesg[:op_status])
+
+  prompt(operation_to_message(operator) + calc_mesg[:op_status])
 
   result = case operator
            when '1'
@@ -103,7 +98,6 @@ loop do # main loop
            end
 
   prompt calc_mesg[:result_is] + " #{result}"
-
   prompt calc_mesg[:further_calc]
   answer = Kernel.gets().chomp()
   break unless answer.downcase().start_with?('y')

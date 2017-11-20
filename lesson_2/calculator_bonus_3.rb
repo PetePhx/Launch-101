@@ -2,25 +2,21 @@ def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
-# this one should work with integers, decimal floats,
-# as well as the scientific notation 1.6E-19
-def number? num
+def number?(num)
   num =~ /\A-?\d*.?\d+(e-?\d+)?\z/i
 end
-# both methods reject decimal point without following digits e.g. "1.""
 
 def operation_to_message(op)
-
-  op_str = case op
-  when '1'
-    'Adding'
-  when '2'
-    'Subtracting'
-  when '3'
-    'Multiplying'
-  when '4'
-    'Dividing'
-  end
+  op_str =  case op
+            when '1'
+              'Adding'
+            when '2'
+              'Subtracting'
+            when '3'
+              'Multiplying'
+            when '4'
+              'Dividing'
+            end
   puts "Inside the operation_to_message method."
   op_str
 end

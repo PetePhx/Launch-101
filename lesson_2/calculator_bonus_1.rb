@@ -3,7 +3,7 @@ def prompt(message)
 end
 
 def valid_number?(num)
-  num =~ /\A-?\d+\z/  # optional minus sign for negativs ints
+  num =~ /\A-?\d+\z/ # optional minus sign for negative numbers
 end
 
 def operation_to_message(op)

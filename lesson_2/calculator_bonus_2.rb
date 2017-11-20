@@ -2,16 +2,12 @@ def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
-# this should work with inteers and decimal floats,
-def number_?(num)
-  (num == num.to_i.to_s || num == num.to_f.to_s) ? true :  false
-end
-# this one should work with inteers, decimal floats,
+# this method should work with integers, decimal floats,
 # as well as the scientific notation 1.6E-19
-def number? num
+# it rejects decimal point without following digits e.g. "1.""
+def number?(num)
   num =~ /\A-?\d*.?\d+(e-?\d+)?\z/i
 end
-# both methods reject decimal point without following digits e.g. "1.""
 
 def operation_to_message(op)
   case op

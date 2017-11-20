@@ -1,5 +1,5 @@
 ---
-:welcome: "¡ Bienvenido a la calculadora! Escriba su nombre: "
+:welcome: "¡Bienvenido a la calculadora! Escriba su nombre: "
 :hi: 'Hola '
 :name_err: Asegúrate de usar un nombre válido.
 :first_num: "¿Cuál es el primer número?"
@@ -7,10 +7,10 @@
 :second_num: "¿Cuál es el segundo número?"
 :op_get: |
   ¿Qué operación desea realizar?
-  1) Agregue
+  1) agregue
   2) reste
   3) multiplique
-  4) Divida
+  4) divida
 :op_err: Debe elegir 1, 2, 3, o 4
 :op_status: " los dos números ..."
 :result_is: 'El resultado es: '

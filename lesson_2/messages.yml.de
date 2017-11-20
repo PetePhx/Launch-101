@@ -1,7 +1,7 @@
 ---
-:welcome: 'Willkommen bei Calculator! Geben Sie Ihren Namen ein:'
+:welcome: 'Willkommen bei Calculator!                    Geben Sie Ihren Namen ein:'
 :hi: 'Hallo '
-:name_err: Stellen Sie sicher, dass Sie einen gültigen Namen verwenden
+:name_err: Stellen Sie sicher,                    dass Sie einen gültigen Namen verwenden
 :first_num: Was ist die erste Zahl
 :num_err: Das sieht nicht wie eine gültige Zahl aus.
 :second_num: Was ist die zweite Zahl?
@@ -10,12 +10,14 @@
   1) hinzufügen
   2) subtrahieren
   3) multiplizieren
-  4) Divide
-:op_err: Muss 1, 2, 3 oder 4 wählen.
+  4) teilen
+:op_err: Müssen 1, 2, 3 oder 4 wählen.
 :op_status: " die zwei Zahlen ..."
 :result_is: 'Das Ergebnis ist: '
-:further_calc: Möchten Sie eine weitere Berechnung durchführen? (Y, um wieder zu berechnen)
-:kthnxbye: Vielen Dank für die Verwendung des Rechners. Auf wieder sehen!
+:further_calc: Möchten Sie eine weitere Berechnung durchführen?                    (Y,
+  um wieder zu berechnen)
+:kthnxbye: Vielen Dank für die Verwendung des Rechners.                    Auf wieder
+  sehen!
 :op_verbs:
 - Hinzufügen
 - Subtrahieren

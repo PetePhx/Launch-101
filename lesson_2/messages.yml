@@ -14,5 +14,6 @@
 :op_err: Must choose 1, 2, 3, or 4.
 :op_status: " the two numbers..."
 :result_is: 'The result is: '
-:further_calc: Do you want to perform another calculation? (Y to calculate again)
+:further_calc: Do you want to perform another calculation?               (Y to calculate
+  again)
 :kthnxbye: Thank you for using the calculator. Goodbye!

@@ -30,9 +30,9 @@ end
 
 def update_results(player, computer, scores)
   if win?(player, computer)
-    scores[0] += 1
+    scores[:player] += 1
   elsif win?(computer, player)
-    scores[1] += 1
+    scores[:computer] += 1
   end
 end
 
@@ -40,21 +40,21 @@ def display_scores(scores)
   prompt("--------------------------------------------")
   prompt("-------------- Current Scores --------------")
   prompt("--------------------------------------------")
-  prompt("---------- You: #{scores[0]} --- Computer: #{scores[1]} ----------")
+  prompt("---------- You: #{scores[:player]} --- Computer: #{scores[:computer]} ----------")
   prompt("--------------------------------------------")
 end
 
 def display_final(scores)
-  if scores[0] == 5
+  if scores[:player] == 5
     prompt("YOU WON!")
-  elsif scores[1] == 5
+  elsif scores[:computer] == 5
     prompt("YOU LOST!")
   else
     prompt("Beep Beep Boop... something went wrong! bye!")
   end
 end
 
-system("clear")
+system("clear") || system('cls')
 prompt("Welcome to Rock-Paper-Scissors-Spock-Lizard!")
 puts
 prompt("
@@ -64,16 +64,15 @@ prompt("
   smashes SCISSORS decapitates LIZZARD eats PAPER disproves
   SPOCK vaporizes ROCK crushes SCISSORS!
 
-  The player who first reaches score FIVE wins!
+  The player who first reaches FIVE wins!
 
   ===============================================================
 
   ")
 
 loop do
-  # [player_score, computer_score]. Mutable structure used for easier updates.
-  scores = [0, 0]
-  until (scores[0] >= 5) || (scores[1] >= 5)
+  scores = { player: 0, computer: 0 }
+  until (scores[:player] >= 5) || (scores[:computer] >= 5)
     choice = ''
     loop do
       prompt("Choose one: #{VALID_CHOICES.join(', ')},")
@@ -81,9 +80,9 @@ loop do
 (R)ock/(P)aper/(S)cissors/spoc(K)/(L)izard, respectively.")
       choice = Kernel.gets().chomp().downcase
 
-      if VALID_CHOICES.include?(choice)
-        break
-      elsif LETTERS_HASH.key?(choice.to_sym)
+      break if VALID_CHOICES.include?(choice)
+
+      if LETTERS_HASH.key?(choice.to_sym)
         choice = LETTERS_HASH[choice.to_sym]
         break
       else
@@ -92,7 +91,7 @@ loop do
     end
 
     computer_choice = VALID_CHOICES.sample()
-    system("clear")
+    system("clear") || system('cls')
     Kernel.puts("You chose: #{choice}; Computer chose: #{computer_choice}")
     display_results(choice, computer_choice)
     update_results(choice, computer_choice, scores)
@@ -100,7 +99,8 @@ loop do
   end
 
   display_final(scores)
-  prompt("Do you want to play again? press 'y' for yes.")
+  prompt("Do you want to play again? enter 'y' for yes. \
+Enter any other key to exit.")
   answer = Kernel.gets().chomp()
   break unless answer.downcase.start_with?('y')
 end

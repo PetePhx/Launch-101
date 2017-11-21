@@ -6,7 +6,7 @@ end
 # as well as the scientific notation 1.6E-19
 # it rejects decimal point without following digits e.g. "1.""
 def number?(num)
-  num =~ /\A-?\d*.?\d+(e-?\d+)?\z/i
+  num =~ /\A-?\d*\.?\d+(e-?\d+)?\z/i
 end
 
 def operation_to_message(op)

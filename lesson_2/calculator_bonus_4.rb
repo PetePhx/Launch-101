@@ -5,7 +5,7 @@ def prompt(message)
 end
 
 def number?(num)
-  num =~ /\A-?\d*.?\d+(e-?\d+)?\z/i
+  num =~ /\A-?\d*\.?\d+(e-?\d+)?\z/i
 end
 
 def operation_to_message(op)

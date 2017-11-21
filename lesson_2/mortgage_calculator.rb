@@ -106,10 +106,10 @@ or #{format('%02.2f', duration_yr)} year(s)."
 (enter 'y' for yes)"
 
   answer = Kernel.gets().chomp()
-  unless answer.downcase().start_with?('y')
-    break
-  else
+  if answer.downcase().start_with?('y')
     system("clear")
+  else
+    break
   end
 end
 

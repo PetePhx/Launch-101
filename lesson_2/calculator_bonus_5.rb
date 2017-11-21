@@ -9,6 +9,12 @@ CALC_ART = '
 \  /\  / |___| |___| \__/\ \_/ / |  | || |___      | | \ \_/ /
  \/  \/\____/\_____/\____/\___/\_|  |_/\____/      \_/  \___/
 
+                       _____ _   _  _____
+                      |_   _| | | ||  ___|
+                        | | | |_| || |__
+                        | | |  _  ||  __|
+                        | | | | | || |___
+                        \_/ \_| |_/\____/
 
  _____   ___   _     _____ _   _ _       ___ _____ ___________ _
 /  __ \ / _ \ | |   /  __ \ | | | |     / _ \_   _|  _  | ___ \ |
@@ -123,10 +129,10 @@ loop do # main loop
   prompt "==================================="
   prompt calc_mesg[:further_calc]
   answer = Kernel.gets().chomp()
-  unless answer.downcase().start_with?('y')
-    break
-  else
+  if answer.downcase().start_with?('y')
     system("clear")
+  else
+    break
   end
 end
 

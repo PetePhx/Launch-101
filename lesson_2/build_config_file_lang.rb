@@ -46,7 +46,7 @@ calc_mesg[:en] = { welcome: "Welcome to Calculator! Enter your name:",
                    result_is: "The result is: ",
                    further_calc:
                    "Do you want to perform another calculation? \
-                   (Y to calculate again)",
+(Y to calculate again)",
                    kthnxbye: "Thank you for using the calculator. Goodbye!",
                    op_verbs: %w(Adding Subtracting Multiplying Dividing) }
 
@@ -62,7 +62,7 @@ calc_mesg[:es] = { welcome: "¡Bienvenido a la calculadora! Escriba su nombre: "
                    result_is: "El resultado es: ",
                    further_calc:
                    "¿Desea realizar otro cálculo? (y para calcular de nuevo)",
-                   kthnxbye: "Gracias por usar la calculadora. ¡ Adiós!",
+                   kthnxbye: "Gracias por usar la calculadora. ¡Adiós!",
                    op_verbs: %w(Añadiendo Restando Multiplicando Dividiendo) }
 
 calc_mesg[:fr] = { welcome: "Bienvenue à Calculator! Entrez votre nom: ",
@@ -76,16 +76,16 @@ calc_mesg[:fr] = { welcome: "Bienvenue à Calculator! Entrez votre nom: ",
                    op_status: " Les deux nombres ...",
                    result_is: "Le résultat est: ",
                    further_calc: "Voulez-vous effectuer un autre calcul? \
-                   (Y pour calculer à nouveau) ",
+(Y pour calculer à nouveau) ",
                    kthnxbye: "Merci d'avoir utilisé la calculatrice. \
-                   Au revoir!",
+Au revoir!",
                    op_verbs: %w(Ajout Soustraire Multiplication Diviser) }
 
 calc_mesg[:de] = { welcome: "Willkommen bei Calculator! \
-                   Geben Sie Ihren Namen ein:",
+Geben Sie Ihren Namen ein:",
                    hi: "Hallo ",
                    name_err: "Stellen Sie sicher, \
-                   dass Sie einen gültigen Namen verwenden",
+dass Sie einen gültigen Namen verwenden",
                    first_num: "Was ist die erste Zahl",
                    num_err: "Das sieht nicht wie eine gültige Zahl aus.",
                    second_num: "Was ist die zweite Zahl?",
@@ -95,9 +95,9 @@ calc_mesg[:de] = { welcome: "Willkommen bei Calculator! \
                    result_is: "Das Ergebnis ist: ",
                    further_calc:
                    "Möchten Sie eine weitere Berechnung durchführen? \
-                   (Y, um wieder zu berechnen)",
+(Y, um wieder zu berechnen)",
                    kthnxbye: "Vielen Dank für die Verwendung des Rechners. \
-                   Auf wieder sehen!",
+Auf wieder sehen!",
                    op_verbs: %w(Hinzufügen Subtrahieren Multiplizieren Teilen) }
 
 langs = [:en, :es, :fr, :de]

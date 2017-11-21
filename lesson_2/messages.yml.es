@@ -15,7 +15,7 @@
 :op_status: " los dos números ..."
 :result_is: 'El resultado es: '
 :further_calc: "¿Desea realizar otro cálculo? (y para calcular de nuevo)"
-:kthnxbye: Gracias por usar la calculadora. ¡ Adiós!
+:kthnxbye: Gracias por usar la calculadora. ¡Adiós!
 :op_verbs:
 - Añadiendo
 - Restando

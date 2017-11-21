@@ -1,5 +1,25 @@
 require 'yaml'
 
+CALC_ART = '
+=================================================================
+ _    _ _____ _     _____ ________  ___ _____     _____ _____
+| |  | |  ___| |   /  __ \  _  |  \/  ||  ___|   |_   _|  _  |
+| |  | | |__ | |   | /  \/ | | | .  . || |__       | | | | | |
+| |/\| |  __|| |   | |   | | | | |\/| ||  __|      | | | | | |
+\  /\  / |___| |___| \__/\ \_/ / |  | || |___      | | \ \_/ /
+ \/  \/\____/\_____/\____/\___/\_|  |_/\____/      \_/  \___/
+
+
+ _____   ___   _     _____ _   _ _       ___ _____ ___________ _
+/  __ \ / _ \ | |   /  __ \ | | | |     / _ \_   _|  _  | ___ \ |
+| /  \// /_\ \| |   | /  \/ | | | |    / /_\ \| | | | | | |_/ / |
+| |    |  _  || |   | |   | | | | |    |  _  || | | | | |    /| |
+| \__/\| | | || |___| \__/\ |_| | |____| | | || | \ \_/ / |\ \|_|
+\____/ \_| |_/\_____/\____/\___/ \____/\_| |_/\_/  \___/\_| \_(_)
+
+=================================================================
+'
+
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
@@ -8,6 +28,8 @@ def number?(num)
   num =~ /\A-?\d*\.?\d+(e-?\d+)?\z/i
 end
 
+system("clear")
+puts CALC_ART
 # run build_config_file_lang.rb to prepare messages.yml.en, etc...
 prompt "Please choose languae: \
 1: English,  2: Español, 3: Français, 4: Deutsch"
@@ -96,10 +118,16 @@ loop do # main loop
              number1.to_f / number2.to_f
            end
 
-  prompt calc_mesg[:result_is] + " #{result}"
+  prompt "==================================="
+  prompt calc_mesg[:result_is] + "     #{result}"
+  prompt "==================================="
   prompt calc_mesg[:further_calc]
   answer = Kernel.gets().chomp()
-  break unless answer.downcase().start_with?('y')
+  unless answer.downcase().start_with?('y')
+    break
+  else
+    system("clear")
+  end
 end
 
 prompt calc_mesg[:kthnxbye]

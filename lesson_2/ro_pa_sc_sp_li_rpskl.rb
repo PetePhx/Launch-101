@@ -32,7 +32,7 @@ loop do
   choice = ''
   loop do
     prompt("Choose one: #{VALID_CHOICES.join(', ')},")
-    prompt("or R/P/S/K/L, for Rock/Paper/Scissor/spocK/Lizard, respectively.")
+    prompt("or R/P/S/K/L, for Rock/Paper/Scissors/spocK/Lizard, respectively.")
     choice = Kernel.gets().chomp().downcase
 
     if VALID_CHOICES.include?(choice)

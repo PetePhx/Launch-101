@@ -36,27 +36,29 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"""$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
 DLR
 
+# The Provided Formula. The monthly interest (interest_mon) should be
+# striktly positive.
+# Zero interest results in 0.0 / 0.0, or NaN
 def monthly_mortgage(loan, interest_mon, duration_mon)
   loan * (interest_mon / (1 - (1 + interest_mon)**(-1 * duration_mon)))
 end
 
 # Explanation: Monthly rate is approximately yearly_rate/12.
-# Below if the more accurate formula, i.e. (1+yearly_rate)**(1./12) - 1
+# Below is the more accurate formula for compound interest, i.e.
+#  (1 + yearly_rate)**(1./12) - 1
 def mortgage(loan, ann_percent_rate, duration_yr)
   interest_mon = (1 + ann_percent_rate / 100.0)**(1.0 / 12) - 1
   duration_mon = duration_yr * 12
 
-  monthly_mortgage loan, interest_mon, duration_mon
+  monthly_mortgage(loan, interest_mon, duration_mon)
 end
 
 puts dollar_greet
-
-puts "\n\n\n\nWelcome to Your Friendly Neighborhood Mortgage Calculator App! :)"
-
-puts "\nPlease enter the dollar amount of loan, (e.g. 100000 for $100,000.00):"
+puts "\n\n\nWelcome to the Mortgage Calculator App!"
+puts "\n\nPlease enter the dollar amount of \
+the loan, (e.g. 100000 for $100,000.00):"
 
 loan = 0
 loop do
@@ -69,7 +71,7 @@ puts "Enter Annual Percentage Rate or APR (e.g. 5 for a 5% APR):"
 loop do
   ann_percent_rate = gets.chomp.to_f
   if ann_percent_rate <= 0
-    puts "Please enter a positive number for Annual Percentage Date!"
+    puts "Please enter a positive number for Annual Percentage Rate!"
   else
     break
   end
@@ -80,13 +82,14 @@ puts "Enter loan duration in years:"
 loop do
   duration_yr = gets.chomp.to_f
   if duration_yr <= 0
-    puts "Please enter a positive number for loan duration!"
+    puts "Please enter a positive number for the loan duration!"
   else
     break
   end
 end
 
 monthly_pay = mortgage(loan, ann_percent_rate, duration_yr)
+
 puts "\nYour monthly payments will be:\
  #{format('%02.2f', monthly_pay)} dollars per month. :)"
 
@@ -96,4 +99,4 @@ puts "\nIt will be paid off in #{12 * duration_yr} months,\
 puts "\nYour total payments (principal+interest) will be:\
  #{format('%02.2f', monthly_pay * 12 * duration_yr)} dollars. :)"
 
-puts "\nGood Luck with that! :)"
+puts "\nThank you and Goodbye!"

@@ -56,47 +56,61 @@ def mortgage(loan, ann_percent_rate, duration_yr)
 end
 
 puts dollar_greet
-puts "\n\n\nWelcome to the Mortgage Calculator App!"
-puts "\n\nPlease enter the dollar amount of \
+puts "\nWelcome to the Mortgage Calculator App!"
+
+# main loop
+loop do
+  puts "\nPlease enter the dollar amount of \
 the loan, (e.g. 100000 for $100,000.00):"
 
-loan = 0
-loop do
-  loan = gets.chomp.to_f
-  if loan <= 0 then puts "Please enter a positive number!" else break end
-end
+  loan = 0
+  loop do
+    loan = gets.chomp.to_f
+    if loan <= 0 then puts "Please enter a positive number!" else break end
+  end
 
-ann_percent_rate = 0
-puts "Enter Annual Percentage Rate or APR (e.g. 5 for a 5% APR):"
-loop do
-  ann_percent_rate = gets.chomp.to_f
-  if ann_percent_rate <= 0
-    puts "Please enter a positive number for Annual Percentage Rate!"
-  else
+  ann_percent_rate = 0
+  puts "Enter Annual Percentage Rate or APR (e.g. 5 for a 5% APR):"
+  loop do
+    ann_percent_rate = gets.chomp.to_f
+    if ann_percent_rate <= 0
+      puts "Please enter a positive number for Annual Percentage Rate!"
+    else
+      break
+    end
+  end
+
+  duration_yr = 0
+  puts "Enter loan duration in years:"
+  loop do
+    duration_yr = gets.chomp.to_f
+    if duration_yr <= 0
+      puts "Please enter a positive number for the loan duration!"
+    else
+      break
+    end
+  end
+
+  monthly_pay = mortgage(loan, ann_percent_rate, duration_yr)
+
+  puts "\nYour monthly payments will be: \
+#{format('%02.2f', monthly_pay)} dollars per month."
+
+  puts "\nIt will be paid off in #{12 * duration_yr} months, \
+or #{format('%02.2f', duration_yr)} year(s)."
+
+  puts "\nYour total payments (principal+interest) will be: \
+#{format('%02.2f', monthly_pay * 12 * duration_yr)} dollars."
+
+  puts "\nWould you like to do another mortgage calculation? \
+(enter 'y' for yes)"
+
+  answer = Kernel.gets().chomp()
+  unless answer.downcase().start_with?('y')
     break
+  else
+    system("clear")
   end
 end
-
-duration_yr = 0
-puts "Enter loan duration in years:"
-loop do
-  duration_yr = gets.chomp.to_f
-  if duration_yr <= 0
-    puts "Please enter a positive number for the loan duration!"
-  else
-    break
-  end
-end
-
-monthly_pay = mortgage(loan, ann_percent_rate, duration_yr)
-
-puts "\nYour monthly payments will be:\
- #{format('%02.2f', monthly_pay)} dollars per month. :)"
-
-puts "\nIt will be paid off in #{12 * duration_yr} months,\
- or #{format('%02.2f', duration_yr)} year(s). :)"
-
-puts "\nYour total payments (principal+interest) will be:\
- #{format('%02.2f', monthly_pay * 12 * duration_yr)} dollars. :)"
 
 puts "\nThank you and Goodbye!"

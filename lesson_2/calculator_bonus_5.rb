@@ -34,11 +34,14 @@ def number?(num)
   num =~ /\A-?\d*\.?\d+(e-?\d+)?\z/i
 end
 
-system("clear")
+system("clear") || system('cls')
 puts CALC_ART
 # run build_config_file_lang.rb to prepare messages.yml.en, etc...
-prompt "Please choose languae: \
-1: English,  2: Español, 3: Français, 4: Deutsch"
+prompt "Please choose the languae:
+1: English
+2: Español
+3: Français
+4: Deutsch"
 
 lang =  case gets.chomp
         when "2" then "es"
@@ -130,7 +133,7 @@ loop do # main loop
   prompt calc_mesg[:further_calc]
   answer = Kernel.gets().chomp()
   if answer.downcase().start_with?('y')
-    system("clear")
+    system("clear") || system('cls')
   else
     break
   end

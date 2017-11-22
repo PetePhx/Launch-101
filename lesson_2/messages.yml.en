@@ -1,5 +1,5 @@
 ---
-:welcome: 'Welcome to Calculator! Enter your name:'
+:welcome: 'Welcome to the Calculator! Enter your name:'
 :hi: 'Hi '
 :name_err: Make sure to use a valid name.
 :first_num: What's the first number?
@@ -14,7 +14,8 @@
 :op_err: Must choose 1, 2, 3, or 4.
 :op_status: " the two numbers..."
 :result_is: 'The result is: '
-:further_calc: Do you want to perform another calculation? (Y to calculate again)
+:further_calc: Do you want to perform another calculation? (Enter 'y' to calculate
+  again; any other key to exit.)
 :kthnxbye: Thank you for using the calculator. Goodbye!
 :op_verbs:
 - Adding

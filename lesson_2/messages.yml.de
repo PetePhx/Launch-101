@@ -1,5 +1,5 @@
 ---
-:welcome: 'Willkommen bei Calculator! Geben Sie Ihren Namen ein:'
+:welcome: 'Willkommen beim Taschenrechner! Geben Sie Ihren Namen ein:'
 :hi: 'Hallo '
 :name_err: Stellen Sie sicher, dass Sie einen gültigen Namen verwenden
 :first_num: Was ist die erste Zahl
@@ -14,7 +14,8 @@
 :op_err: Müssen 1, 2, 3 oder 4 wählen.
 :op_status: " die zwei Zahlen ..."
 :result_is: 'Das Ergebnis ist: '
-:further_calc: Möchten Sie eine weitere Berechnung durchführen? (Y, um wieder zu berechnen)
+:further_calc: Möchten Sie eine weitere Berechnung durchführen? (Geben Sie ' y ' ein,
+  um erneut zu berechnen; Geben Sie eine beliebige andere Taste zum Beenden ein.)
 :kthnxbye: Vielen Dank für die Verwendung des Rechners. Auf wieder sehen!
 :op_verbs:
 - Hinzufügen

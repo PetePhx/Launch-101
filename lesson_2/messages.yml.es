@@ -14,7 +14,8 @@
 :op_err: Debe elegir 1, 2, 3, o 4
 :op_status: " los dos números ..."
 :result_is: 'El resultado es: '
-:further_calc: "¿Desea realizar otro cálculo? (y para calcular de nuevo)"
+:further_calc: "¿Desea realizar otro cálculo? (Introduzca 'y' para calcular de nuevo;
+  cualquier otra llave para salir.)"
 :kthnxbye: Gracias por usar la calculadora. ¡Adiós!
 :op_verbs:
 - Añadiendo

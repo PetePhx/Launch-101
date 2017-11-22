@@ -23,7 +23,7 @@ def monthly_mortgage(loan, monthly_interest, duration_in_months)
 end
 
 def mortgage(loan, ann_percent_rate, duration_in_years)
-  monthly_interest = (ann_percent_rate / 100.0 ) / 12.0
+  monthly_interest = (ann_percent_rate / 100.0) / 12.0
   duration_in_months = duration_in_years * 12
 
   monthly_mortgage(loan, monthly_interest, duration_in_months)

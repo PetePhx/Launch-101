@@ -1,60 +1,35 @@
 dollar_greet = <<-DLR
+====================================================
+      ▄            ▄            ▄            ▄
+ ▄▄▄▄█░█▄▄▄▄  ▄▄▄▄█░█▄▄▄▄  ▄▄▄▄█░█▄▄▄▄  ▄▄▄▄█░█▄▄▄▄
+▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+▐░█▀▀█░█▀▀▀▀ ▐░█▀▀█░█▀▀▀▀ ▐░█▀▀█░█▀▀▀▀ ▐░█▀▀█░█▀▀▀▀
+▐░█▄▄█░█▄▄▄▄ ▐░█▄▄█░█▄▄▄▄ ▐░█▄▄█░█▄▄▄▄ ▐░█▄▄█░█▄▄▄▄
+▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+ ▀▀▀▀█░█▀▀█░▌ ▀▀▀▀█░█▀▀█░▌ ▀▀▀▀█░█▀▀█░▌ ▀▀▀▀█░█▀▀█░▌
+ ▄▄▄▄█░█▄▄█░▌ ▄▄▄▄█░█▄▄█░▌ ▄▄▄▄█░█▄▄█░▌ ▄▄▄▄█░█▄▄█░▌
+▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+ ▀▀▀▀█░█▀▀▀▀  ▀▀▀▀█░█▀▀▀▀  ▀▀▀▀█░█▀▀▀▀  ▀▀▀▀█░█▀▀▀▀
+      ▀            ▀            ▀            ▀
+====================================================
 
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$,,,$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"OOO"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$!OOO!$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$,"OOO",$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$,"OOOOOOO",$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$!"OOOOOOOOOOO"!$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$,"OOOOOOOOOOOOOOO",$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$,1OOOOOOOOOOOOOOOOOOO7,$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$,!OOOOOOOOOOOOOOOOOOOOOO"$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$!OOOOOOOOO/""""'\\OOOOOOOO1$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$"OOOOOOOOOO"$$$$!OOOOOOOO"$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$"OOOOOOOOOOO!$$$",OOOOOOO!$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$",OOOOOOOOOO",$$$"""""""$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$"!OOOOOOOOOOO",$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$",OOOOOOOOOOO",$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$"OOOOOOOOOOOO",$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"!OOOOOOOOOOOO"+$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"==OOOOOOOOOOO,$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$,,,,,,$$$$",OOOOOOOOOO",$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$,"OOOOOO',$$$$",OOOOOOOOO!$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$1OOOOOOOO."~~~"OOOOOOOOOO!$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$!OOOOOOOOOOOOOOOOOOOOOOO1$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$",OOOOOOOOOOOOOOOOOOOOO,"$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$",OOOOOOOOOOOOOOOOOOO!$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$1OOOOOOOOOOOOOOOO,1$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$"~~,OOOOOOOOOO,"$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"""1OOO1"'$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$!OOO!$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$,OOO,$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"""$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 DLR
 
 # The Provided Formula. The monthly interest (interest_mon) should be
-# striktly positive.
-# Zero interest results in 0.0 / 0.0, or NaN
-def monthly_mortgage(loan, interest_mon, duration_mon)
-  loan * (interest_mon / (1 - (1 + interest_mon)**(-1 * duration_mon)))
+# strictly positive. Zero interest results in 0.0 / 0.0, or NaN
+def monthly_mortgage(loan, monthly_interest, duration_in_months)
+  loan * monthly_interest /
+    (1 - (1 + monthly_interest)**(-1 * duration_in_months))
 end
 
-# Explanation: Monthly rate is approximately yearly_rate/12.
-# Below is the more accurate formula for compound interest, i.e.
-#  (1 + yearly_rate)**(1./12) - 1
-def mortgage(loan, ann_percent_rate, duration_yr)
-  interest_mon = (1 + ann_percent_rate / 100.0)**(1.0 / 12) - 1
-  duration_mon = duration_yr * 12
+def mortgage(loan, ann_percent_rate, duration_in_years)
+  monthly_interest = (ann_percent_rate / 100.0 ) / 12.0
+  duration_in_months = duration_in_years * 12
 
-  monthly_mortgage(loan, interest_mon, duration_mon)
+  monthly_mortgage(loan, monthly_interest, duration_in_months)
 end
 
+system("clear") || system("cls")
 puts dollar_greet
 puts "\nWelcome to the Mortgage Calculator App!"
 
@@ -66,7 +41,11 @@ the loan, (e.g. 100000 for $100,000.00):"
   loan = 0
   loop do
     loan = gets.chomp.to_f
-    if loan <= 0 then puts "Please enter a positive number!" else break end
+    if loan <= 0
+      puts "Please enter a positive number!"
+    else
+      break
+    end
   end
 
   ann_percent_rate = 0
@@ -99,15 +78,15 @@ the loan, (e.g. 100000 for $100,000.00):"
   puts "\nIt will be paid off in #{12 * duration_yr} months, \
 or #{format('%02.2f', duration_yr)} year(s)."
 
-  puts "\nYour total payments (principal+interest) will be: \
+  puts "\nYour total payments (principal plus interest) will be: \
 #{format('%02.2f', monthly_pay * 12 * duration_yr)} dollars."
 
   puts "\nWould you like to do another mortgage calculation? \
-(enter 'y' for yes)"
+(Enter 'y' for yes; enter any other key to exit.)"
 
   answer = Kernel.gets().chomp()
   if answer.downcase().start_with?('y')
-    system("clear")
+    system("clear") || system("cls")
   else
     break
   end

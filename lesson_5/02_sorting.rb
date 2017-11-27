@@ -2,7 +2,9 @@
 
 ['arc', 'bat', 'cape', 'ants', 'cap'].sort
 
-# Answer: Based on the documentation for <=> operator, the comparison for
+# Answer:
+
+# Based on the documentation for the <=> operator, the comparison for
 # strings is done based the the first letters, and if the first letters are the
 # same, based on the second letters and so on. if the longer string has the
 # shorter string in its beginning, the longer one is considered "higher"
@@ -30,6 +32,7 @@ puts
 
 
 # Answer
+
 # The array <=> operator works somewhat similar to string <=> operator,
 # following an elementwise comparison to determine the ordinal position of two
 # arrays. Based on this, we expect the following sorted array of arrays:

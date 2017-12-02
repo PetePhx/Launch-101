@@ -147,5 +147,4 @@ loop do
   answer = gets.chomp
   break unless answer.downcase.start_with?('y')
 end
-
 prompt "Thanks for playing tictactoe. Goodbye!"

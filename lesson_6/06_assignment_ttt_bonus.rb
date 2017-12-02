@@ -49,6 +49,10 @@ p [
 # threat" to be 2 squares marked by the opponent in a row. If there's no
 # immediate threat, then it will just pick a random square.
 
-# 
+#
 
 # tictactoe_defensive_ai.rb
+
+# tictactoe_offensive_ai.rb
+
+# tictactoe_turn_refine.rb

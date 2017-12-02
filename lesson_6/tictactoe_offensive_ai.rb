@@ -109,8 +109,8 @@ def board_full?(brd)
 end
 
 def someone_won?(brd)
-  !!detect_winner(brd)
 end
+!!detect_winner(brd)
 
 def detect_winner(brd)
   WINNING_LINES.each do |line|
@@ -166,5 +166,4 @@ loop do
   answer = gets.chomp
   break unless answer.downcase.start_with?('y')
 end
-
 prompt "Thanks for playing tictactoe. Goodbye!"

@@ -1,4 +1,3 @@
-require 'pry'
 INITIAL_MARKER = ' '
 PLAYER_MARKER = 'X'
 COMPUTER_MARKER = 'O'
@@ -36,7 +35,7 @@ end
 
 # rubocop: disable Metrics/AbcSize
 def display_board(brd)
-  system "clear"
+  system("clear") || system("CLS")
   puts "You're '#{PLAYER_MARKER}'. Computer is '#{COMPUTER_MARKER}'."
   puts ""
   puts "     |     |"
@@ -136,12 +135,13 @@ end
 
 def player_places_piece!(brd)
   square = ''
+  prompt "Choose an available square (#{joinor(empty_squares(brd))}):"
+  display_guide(brd)
   loop do
-    prompt "Choose a square (#{joinor(empty_squares(brd))}):"
-    display_guide(brd)
     square = gets.chomp.to_i
     break if empty_squares(brd).include?(square)
     prompt "Sorry, that's not a valid choice!"
+    prompt "only: #{joinor(empty_squares(brd))}."
   end
   brd[square] = PLAYER_MARKER
 end
@@ -189,6 +189,10 @@ def find_winning_square(brd, contestant) # contestant is 'Player' or 'Computer'
   nil
 end
 
+def update_scores(scores, winner)
+  scores[winner.to_sym] += 1
+end
+
 def alternate_player(current_player)
   case current_player
   when 'Player' then 'Computer'
@@ -214,8 +218,9 @@ loop do
 
     display_board(board)
     if someone_won?(board)
-      scores[detect_winner(board).to_sym] += 1
-      prompt "#{detect_winner(board)} won this round!"
+      winner = detect_winner(board)
+      update_scores(scores, winner)
+      prompt "#{winner} won this round!"
     else
       prompt "It's a tie!"
     end
@@ -226,8 +231,8 @@ loop do
   end
   prompt "* * * #{scores.key(5)} is also the winner! * * *"
   prompt ""
-  prompt "Play again? (y/n)"
+  prompt "Play again? Enter 'y' for yes. Enter any other key to exit."
   answer = gets.chomp
   break unless answer.downcase.start_with?('y')
 end
-prompt "Thanks for playing tictactoe. Goodbye!"
+prompt "Thank you for playing tictactoe. Goodbye!"

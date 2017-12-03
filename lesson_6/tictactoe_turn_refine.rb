@@ -4,7 +4,7 @@ COMPUTER_MARKER = 'O'
 MARKERS = { Initial: INITIAL_MARKER, Player: PLAYER_MARKER,
             Computer: COMPUTER_MARKER }
 
-FIRST_PLAYER = 'Choose' # either 'PLayer' or 'Computer' or 'Choose'
+FIRST_PLAYER = 'Choose' # either 'Player' or 'Computer' or 'Choose'
 
 WINNING_LINES = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] + # rows
                 [[1, 4, 7], [2, 5, 8], [3, 6, 9]] + # columns

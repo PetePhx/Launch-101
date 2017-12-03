@@ -1,8 +1,8 @@
 INITIAL_MARKER = ' '
 PLAYER_MARKER = 'X'
 COMPUTER_MARKER = 'O'
-MARKERS = { 'Initial' => INITIAL_MARKER, 'Player' => PLAYER_MARKER,
-            'Computer' => COMPUTER_MARKER }
+MARKERS = { Initial: INITIAL_MARKER, Player: PLAYER_MARKER,
+            Computer: COMPUTER_MARKER }
 
 FIRST_PLAYER = 'Choose' # either 'PLayer' or 'Computer' or 'Choose'
 
@@ -10,14 +10,14 @@ WINNING_LINES = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] + # rows
                 [[1, 4, 7], [2, 5, 8], [3, 6, 9]] + # columns
                 [[1, 5, 9], [3, 5, 7]]              # diagonals
 
-BANNER = <<-BNR
-████████╗██╗ ██████╗    ████████╗ █████╗  ██████╗    ████████╗ ██████╗ ███████╗
-╚══██╔══╝██║██╔════╝    ╚══██╔══╝██╔══██╗██╔════╝    ╚══██╔══╝██╔═══██╗██╔════╝
-   ██║   ██║██║            ██║   ███████║██║            ██║   ██║   ██║█████╗
-   ██║   ██║██║            ██║   ██╔══██║██║            ██║   ██║   ██║██╔══╝
-   ██║   ██║╚██████╗       ██║   ██║  ██║╚██████╗       ██║   ╚██████╔╝███████╗
-   ╚═╝   ╚═╝ ╚═════╝       ╚═╝   ╚═╝  ╚═╝ ╚═════╝       ╚═╝    ╚═════╝ ╚══════╝
-BNR
+BANNER = '
+ _______  _           _______                  _______
+(_______)(_)         (_______)                (_______)
+    _     _   ____       _     _____   ____       _      ___   _____
+   | |   | | / ___)     | |   (____ | / ___)     | |    / _ \ | ___ |
+   | |   | |( (___      | |   / ___ |( (___      | |   | |_| || ____|
+   |_|   |_| \____)     |_|   \_____| \____)     |_|    \___/ |_____)
+'
 
 def prompt(msg)
   puts "=> #{msg}"
@@ -55,14 +55,11 @@ end
 def display_guide(brd)
   guide_brd = initialize_board
   empty_squares(brd).each { |idx| guide_brd[idx] = idx }
-  prompt "---+---+---"
   prompt " #{guide_brd[1]} | #{guide_brd[2]} | #{guide_brd[3]} "
   prompt "---+---+---"
   prompt " #{guide_brd[4]} | #{guide_brd[5]} | #{guide_brd[6]} "
   prompt "---+---+---"
   prompt " #{guide_brd[7]} | #{guide_brd[8]} | #{guide_brd[9]} "
-  prompt "---+---+---"
-  puts
 end
 # rubocop: enable Metrics/AbcSize
 
@@ -78,7 +75,7 @@ end
 def display_welcome
   system("clear") || system("CLS")
   prompt "Welcome to...\n\n\n"
-  puts BANNER + "\n\n\n"
+  puts BANNER + "\n"
   prompt "+====================== R U L E S ====================+"
   prompt "|                                                     |"
   prompt "|       Try to get three markers in a sequence:       |"
@@ -89,8 +86,6 @@ def display_welcome
   prompt "|                                                     |"
   prompt "+=====================================================+"
   prompt ""
-  # prompt "Enter any key to begin..."
-  # gets
 end
 
 def prompt_user_to_choose_first_player
@@ -122,7 +117,6 @@ def initialize_board
 end
 
 def empty_squares(brd)
-  # binding.pry
   brd.keys.select { |num| brd[num] == INITIAL_MARKER }
 end
 
@@ -181,7 +175,7 @@ def detect_winner(brd)
 end
 
 def find_winning_square(brd, contestant) # contestant is 'Player' or 'Computer'
-  marker = MARKERS[contestant]
+  marker = MARKERS[contestant.to_sym]
   empty_squares(brd).each do |num|
     brd_possible_next = brd.merge({ num => marker })
     return num if detect_winner(brd_possible_next) == contestant
@@ -198,6 +192,12 @@ def alternate_player(current_player)
   when 'Player' then 'Computer'
   when 'Computer' then 'Player'
   end
+end
+
+def play_again?
+  prompt "Play again? Enter 'y' for yes. Enter any other key to exit."
+  answer = gets.chomp
+  answer.downcase.start_with?('y') ? true : false
 end
 
 display_welcome
@@ -226,13 +226,11 @@ loop do
     end
     display_scores(scores)
     break if scores.values.any? { |score| score >= 5 }
-    prompt "Enter any key to start the next round..."
+    prompt "Hit 'Enter' to start the next round..."
     gets
   end
   prompt "* * * #{scores.key(5)} is also the winner! * * *"
   prompt ""
-  prompt "Play again? Enter 'y' for yes. Enter any other key to exit."
-  answer = gets.chomp
-  break unless answer.downcase.start_with?('y')
+  break unless play_again?
 end
-prompt "Thank you for playing tictactoe. Goodbye!"
+prompt "Thank you for playing tic-tac-toe. Goodbye!"

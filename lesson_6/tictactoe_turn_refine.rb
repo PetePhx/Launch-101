@@ -195,7 +195,7 @@ def alternate_player(current_player)
 end
 
 def play_again?
-  prompt "Play again? Enter 'y' for yes. Enter any other key to exit."
+  prompt "Play again? (Enter 'y' for yes -- otherwise exit.)"
   answer = gets.chomp
   answer.downcase.start_with?('y') ? true : false
 end

@@ -192,29 +192,25 @@ def update_scores(scores, winner)
 end
 
 # rubocop: disable Metrics/AbcSize
-# rubocop: disable Metrics/MethodLength
 def display_odds(player_cards, dealer_cards)
   puts "Estimating the odds... please wait a few seconds..."
   odds = estimate_odds(player_cards, dealer_cards)
-  puts "\n" + "STAY:".center(50)
-  puts "+---------------+---------------+---------------+"
-  puts "|" + "WIN".center(15) + "|" + "TIE".center(15) + "|" +
-       "LOSE".center(15) + "|"
-  puts "+---------------+---------------+---------------+"
-  puts "|" + "#{odds[0][0]}%".center(15) + "|" + "#{odds[0][1]}%".center(15) +
-       "|" + "#{odds[0][2]}%".center(15) + "|"
-  puts "+---------------+---------------+---------------+"
-
-  puts "\n" + "HIT:".center(50)
-  puts "+---------------+---------------+---------------+"
-  puts "|" + "WIN".center(15) + "|" + "TIE".center(15) + "|" +
-       "LOSE".center(15) + "|"
-  puts "+---------------+---------------+---------------+"
-  puts "|" + "#{odds[1][0]}%".center(15) + "|" + "#{odds[1][1]}%".center(15) +
-       "|" + "#{odds[1][2]}%".center(15) + "|"
-  puts "+---------------+---------------+---------------+"
+  ["STAY", "HIT"].each_with_index do |choice, idx|
+    puts "\n"
+    puts "+-----------------------------------------------+"
+    puts "|" + "#{choice}:".center(47) + "|"
+    puts "+---------------+---------------+---------------+"
+    puts "|" + "WIN".center(15) + "|" + "TIE".center(15) + "|" +
+         "LOSE".center(15) + "|"
+    puts "+---------------+---------------+---------------+"
+    puts "|" + "#{odds[idx][0]}%".center(15) + "|" +
+         "#{odds[idx][1]}%".center(15) + "|" +
+         "#{odds[idx][2]}%".center(15) + "|"
+    puts "+---------------+---------------+---------------+"
+  end
 end
 
+# rubocop: disable Metrics/MethodLength
 def estimate_odds(player_cards, dealer_cards)
   odds_acc = [[0, 0, 0], [0, 0, 0]]
 

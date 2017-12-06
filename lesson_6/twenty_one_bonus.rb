@@ -215,7 +215,7 @@ def estimate_odds(player_cards, dealer_cards)
   odds_acc = [[0, 0, 0], [0, 0, 0]]
 
   ['stay', 'hit'].each_with_index do |choice, idx|
-    10_000.times do # Choose to "Stay"
+    10_000.times do
       deck = []
       sim_player_cards = player_cards.dup # simulated
       sim_dealer_cards = [dealer_cards[0]]

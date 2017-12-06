@@ -100,7 +100,7 @@ end
 # rubocop: enable Metrics/MethodLength
 
 player_cards = [ {rank: 'Ten', suit: '♠'}, {rank: 'Seven', suit: '♠'} ]
-dealer_cards = [ {rank: 'Seven', suit: '♠'}, {rank: '???', suit: '???'} ]
+dealer_cards = [ {rank: 'Seven', suit: '♥'}, {rank: '???', suit: '???'} ]
 
 display_odds(player_cards, dealer_cards)
 

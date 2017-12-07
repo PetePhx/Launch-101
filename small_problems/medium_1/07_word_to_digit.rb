@@ -15,7 +15,7 @@ def word_to_digit(str)
 end
 
 p [
-word_to_digit("Please call me at five five five one two three four. \
+  word_to_digit("Please call me at five five five one two three four. \
 Thanks.") == 'Please call me at 5 5 5 1 2 3 4. Thanks.'
 ]
 
@@ -53,32 +53,30 @@ Thanks.") == 'Please call me at 5 5 5 1 2 3 4. Thanks.'
 
 def word_to_digit3(str)
   insert_pat = "%$@!~&:^/*" # an unlikely pattern to occur in a text
-  NUM_WORDS.each.each do |key, val| # insert pattern
+  NUM_WORDS.each do |key, val| # insert pattern
     str.gsub!(/\b#{key}\b/, "#{insert_pat}#{val}#{insert_pat}")
   end
   # get rid of space:
   str.gsub!("#{insert_pat} #{insert_pat}", "#{insert_pat}#{insert_pat}")
-  str.gsub!("#{insert_pat}", '') # :get rid of pattern
+  str.gsub!(insert_pat, '') # :get rid of the pattern
 end
 
 p [
   word_to_digit3("Please call me at five five five one two three four. \
 Thanks.") == 'Please call me at 5551234. Thanks.',
   word_to_digit3("The PIN number four is 7 8 9 0.") == \
-"The PIN number 4 is 7 8 9 0."
+  "The PIN number 4 is 7 8 9 0."
 ]
 
 # for the phone number, we use a regex substitution:
 
 def word_to_digit4(str)
-  insert_pat = "%$@!~&:^/*" # an unlikely pattern to occur in a text
-  NUM_WORDS.each.each do |key, val| # translate, insert pattern before/after
+  insert_pat = "%$@!~&:^/*"
+  NUM_WORDS.each do |key, val|
     str.gsub!(/\b#{key}\b/, "#{insert_pat}#{val}#{insert_pat}")
   end
-  # get rid of space:
   str.gsub!("#{insert_pat} #{insert_pat}", "#{insert_pat}#{insert_pat}")
-  str.gsub!("#{insert_pat}", '') # :get rid of pattern
-  #phone number formatting:
+  str.gsub!(insert_pat, '')
   str.gsub!(/(\d{3})(\d{3})(\d{4})/, '(\1) \2-\3')
   str
 end
@@ -86,8 +84,9 @@ end
 p [
   word_to_digit4("Please call me at one two three five five five \
 six seven eight nine. Thanks.") == 'Please call me at (123) 555-6789. Thanks.',
-  word_to_digit4("The PIN number four is 7 8 9 0.") == \
-"The PIN number 4 is 7 8 9 0."
+
+  word_to_digit4("  PIN for vault number four five six is 7 8 9 0.   :)") == \
+  "  PIN for vault number 456 is 7 8 9 0.   :)"
 ]
 
 # using pure regex: add space before every word, while removing space after
@@ -105,5 +104,5 @@ p [
   word_to_digit5("Please call me at one two three five five five \
 six seven eight nine. Thanks.") == 'Please call me at (123) 555-6789. Thanks.',
   word_to_digit5("The PIN number four is 7 8 9 0.") == \
-"The PIN number 4 is 7 8 9 0."
+  "The PIN number 4 is 7 8 9 0."
 ]

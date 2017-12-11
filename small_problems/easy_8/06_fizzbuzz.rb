@@ -34,3 +34,21 @@ def fizzbuzz2(num1, num2)
 end
 
 fizzbuzz2(1, 15)
+
+# more succinct version with case
+
+def fizzbuzz3(num1, num2)
+  arr = []
+  num1.upto(num2) do |num|
+    case num % 15
+    when 0 then arr << "FizzBuzz"
+    when 3, 6, 9, 12 then arr << "Fizz"
+    when 5, 10 then arr << "Buzz"
+    else arr << num
+    end
+  end
+    puts arr.join(", ")
+end
+
+puts
+fizzbuzz3(15, 30)

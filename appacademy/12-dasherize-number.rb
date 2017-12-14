@@ -7,8 +7,27 @@
 #
 # Difficulty: medium.
 
+=begin
+- input: integer
+- output: string. odd numbers with dash before and after
+- rules: no dash at the beginning and end of string
+- algorithm:
+    - convert number to string
+    - substitute each odd number with "-number-"
+    - remove extra dashes from double dashes
+    - remove dashes at the beginning and end, if any
+    - return string
+=end
+
 def dasherize_number(num)
+  str = num.to_s
+  str.gsub!(/([13579])/, '-\1-').squeeze!('-')
+  str.chop! if str[-1] == '-'
+  str = str[1..-1] if str[0] == '-'
+  str
 end
+
+p dasherize_number('12345')
 
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.

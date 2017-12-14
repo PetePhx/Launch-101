@@ -6,7 +6,8 @@
 #
 # Difficulty: hard.
 
-def num_repeats(string)
+def num_repeats(str)
+  str.chars.uniq.select { |chr| str.count(chr) > 1}.size
 end
 
 # These are tests to check that your code is working. After writing

@@ -23,7 +23,16 @@
 # Difficulty: hard. Because this problem relies on outside
 # information, we would not give it to you on the timed challenge. :-)
 
-def caesar_cipher(offset, string)
+def caesar_cipher(offset, str)
+  str_out = ''
+  str.length.times do |idx|
+    if ('a'..'z').cover? str[idx]
+      str_out[idx] = ((str[idx].ord - 97 + offset) % 26 + 97).chr
+    else
+      str_out[idx] = str[idx]
+    end
+  end
+  str_out
 end
 
 # These are tests to check that your code is working. After writing

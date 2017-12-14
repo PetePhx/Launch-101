@@ -29,7 +29,30 @@ def palindrome?(string)
   return true
 end
 
-def longest_palindrome(string)
+=begin
+- input: string.
+- ouput: string. largest palindromic substring
+- rules: palindrome should be at least 2 characters
+- algorithm:
+    - write a method to return all substrings
+    - select substrings 2 characters or longer
+    - select the ones that are palindromes
+    - select the longest one. return.
+=end
+
+def substrings(str)
+  arr = []
+  0.upto(str.size - 1) do |idx_1|
+    idx_1.upto(str.size - 1) do |idx_2|
+      arr << str[idx_1..idx_2]
+    end
+  end
+  arr
+end
+
+def longest_palindrome(str)
+  sub_arr = substrings(str).select { |substr| substr.length >= 2}
+  sub_arr.select { |substr| palindrome?(substr) }.sort_by(&:length).last
 end
 
 # These are tests to check that your code is working. After writing

@@ -22,7 +22,26 @@ def is_prime?(number)
   return true
 end
 
+=begin
+-input: integer: n
+- ouput: integer: the nth prime
+- algorithm:
+  - initialize count to 0
+  - iterate through integers,
+  - for each prime, increment the count
+  - break if count == n
+  - return the prime
+=end
+
 def nth_prime(n)
+  return nil if n < 1
+  count = 0
+  num = 1
+  while count < n
+    num += 1
+    count += 1 if is_prime?(num)
+  end
+  num
 end
 
 # These are tests to check that your code is working. After writing

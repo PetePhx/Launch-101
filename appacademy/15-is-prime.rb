@@ -13,6 +13,11 @@
 # Difficulty: medium.
 
 def is_prime?(number)
+  return false if number < 2
+  2.upto(Math.sqrt(number)) do |dvsr|
+    return false if number % dvsr == 0
+  end
+  return true
 end
 
 # These are tests to check that your code is working. After writing

@@ -8,7 +8,8 @@
 #
 # Difficulty: medium.
 
-def capitalize_words(string)
+def capitalize_words(str)
+  str.split(' ').map(&:capitalize).join(' ')
 end
 
 # These are tests to check that your code is working. After writing
